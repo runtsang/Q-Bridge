@@ -1,0 +1,125 @@
+"""Hybrid classical LSTM with optional convolutional preprocessing."""
+
+from __future__ import annotations
+
+from typing import Tuple
+
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+
+class ConvFilter(nn.Module):
+    """2‑D convolution that emulates a quanvolution layer."""
+    def __init__(self, kernel_size: int = 2, threshold: float = 0.0) -> None:
+        super().__init__()
+        self.kernel_size = kernel_size
+        self.threshold = threshold
+        self.conv = nn.Conv2d(1, 1, kernel_size=kernel_size, bias=True)
+
+    def forward(self, data: torch.Tensor) -> torch.Tensor:
+        # Expect data shape (seq_len, batch, dim) where dim is square.
+        batch, seq_len, dim = data.shape
+        size = int(dim ** 0.5)
+        patch = data.transpose(0, 1).reshape(batch, 1, size, size)
+        logits = self.conv(patch)
+        activations = torch.sigmoid(logits - self.threshold)
+        return activations.mean([-2, -1]).transpose(0, 1)  # (seq_len, batch, 1)
+
+
+class HybridQLSTM(nn.Module):
+    """Classical LSTM with optional convolutional preprocessing."""
+    def __init__(
+        self,
+        input_dim: int,
+        hidden_dim: int,
+        n_qubits: int = 0,
+        conv_kernel: int = 2,
+        conv_threshold: float = 0.0,
+    ) -> None:
+        super().__init__()
+        self.input_dim = input_dim
+        self.hidden_dim = hidden_dim
+        self.n_qubits = n_qubits
+
+        self.conv = ConvFilter(conv_kernel, conv_threshold) if conv_kernel > 0 else None
+
+        gate_dim = hidden_dim
+        self.forget_linear = nn.Linear(input_dim + hidden_dim, gate_dim)
+        self.input_linear = nn.Linear(input_dim + hidden_dim, gate_dim)
+        self.update_linear = nn.Linear(input_dim + hidden_dim, gate_dim)
+        self.output_linear = nn.Linear(input_dim + hidden_dim, gate_dim)
+
+    def forward(
+        self,
+        inputs: torch.Tensor,
+        states: Tuple[torch.Tensor, torch.Tensor] | None = None,
+    ) -> Tuple[torch.Tensor, Tuple[torch.Tensor, torch.Tensor]]:
+        # inputs: (seq_len, batch, dim)
+        if self.conv is not None:
+            conv_feat = self.conv(inputs)  # (seq_len, batch, 1)
+            inputs = conv_feat.view(inputs.size(0), inputs.size(1), -1)
+
+        hx, cx = self._init_states(inputs, states)
+        outputs = []
+        for x in inputs.unbind(dim=0):
+            combined = torch.cat([x, hx], dim=1)
+            f = torch.sigmoid(self.forget_linear(combined))
+            i = torch.sigmoid(self.input_linear(combined))
+            g = torch.tanh(self.update_linear(combined))
+            o = torch.sigmoid(self.output_linear(combined))
+            cx = f * cx + i * g
+            hx = o * torch.tanh(cx)
+            outputs.append(hx.unsqueeze(0))
+        stacked = torch.cat(outputs, dim=0)
+        return stacked, (hx, cx)
+
+    def _init_states(
+        self,
+        inputs: torch.Tensor,
+        states: Tuple[torch.Tensor, torch.Tensor] | None,
+    ) -> Tuple[torch.Tensor, torch.Tensor]:
+        if states is not None:
+            return states
+        batch_size = inputs.size(1)
+        device = inputs.device
+        hx = torch.zeros(batch_size, self.hidden_dim, device=device)
+        cx = torch.zeros(batch_size, self.hidden_dim, device=device)
+        return hx, cx
+
+
+class LSTMTagger(nn.Module):
+    """Tagger that can use the hybrid LSTM or a vanilla LSTM."""
+    def __init__(
+        self,
+        embedding_dim: int,
+        hidden_dim: int,
+        vocab_size: int,
+        tagset_size: int,
+        n_qubits: int = 0,
+        conv_kernel: int = 2,
+        conv_threshold: float = 0.0,
+    ) -> None:
+        super().__init__()
+        self.hidden_dim = hidden_dim
+        self.word_embeddings = nn.Embedding(vocab_size, embedding_dim)
+        if n_qubits > 0:
+            self.lstm = HybridQLSTM(
+                embedding_dim,
+                hidden_dim,
+                n_qubits=n_qubits,
+                conv_kernel=conv_kernel,
+                conv_threshold=conv_threshold,
+            )
+        else:
+            self.lstm = nn.LSTM(embedding_dim, hidden_dim)
+        self.hidden2tag = nn.Linear(hidden_dim, tagset_size)
+
+    def forward(self, sentence: torch.Tensor) -> torch.Tensor:
+        embeds = self.word_embeddings(sentence)
+        lstm_out, _ = self.lstm(embeds.view(len(sentence), 1, -1))
+        tag_logits = self.hidden2tag(lstm_out.view(len(sentence), -1))
+        return F.log_softmax(tag_logits, dim=1)
+
+
+__all__ = ["HybridQLSTM", "LSTMTagger"]

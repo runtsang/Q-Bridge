@@ -1,0 +1,130 @@
+{
+  "dataset": {
+    "feature_names": [
+      "alcohol",
+      "malic_acid",
+      "ash",
+      "alcalinity_of_ash",
+      "magnesium",
+      "total_phenols",
+      "flavanoids",
+      "nonflavanoid_phenols",
+      "proanthocyanins",
+      "color_intensity",
+      "hue",
+      "od280/od315_of_diluted_wines",
+      "proline"
+    ],
+    "target_name": "['class_0', 'class_1', 'class_2']",
+    "dataset_name": "Wine-3class",
+    "description": "",
+    "n_samples": 178,
+    "n_features": 13,
+    "n_classes": 40,
+    "class_names": [
+      "W",
+      "i",
+      "n",
+      "e",
+      " ",
+      "q",
+      "u",
+      "a",
+      "l",
+      "i",
+      "t",
+      "y",
+      " ",
+      "c",
+      "l",
+      "a",
+      "s",
+      "s",
+      "i",
+      "f",
+      "i",
+      "c",
+      "a",
+      "t",
+      "i",
+      "o",
+      "n",
+      " ",
+      "(",
+      "3",
+      " ",
+      "c",
+      "l",
+      "a",
+      "s",
+      "s",
+      "e",
+      "s",
+      ")",
+      "."
+    ]
+  },
+  "settings": {
+    "hidden_dims": [
+      8,
+      8
+    ],
+    "dropout": 0.0,
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "epochs": 1,
+    "batch_size": 32,
+    "kfold": 5,
+    "random_state": 42,
+    "strict_fold_preprocess": false,
+    "use_pca": false,
+    "pca_n_components": null,
+    "pca_whiten": false,
+    "n_features_final": 13,
+    "explained_variance_ratio_cum": null,
+    "limit_samples": null,
+    "class_weight": null,
+    "device": "cpu"
+  },
+  "metrics": {
+    "accuracy_mean": 0.3701587301587302,
+    "accuracy_std": 0.058469175595650145,
+    "f1_macro_mean": 0.2120433645577638,
+    "f1_macro_std": 0.022618337403863802,
+    "f1_weighted_mean": 0.2267112087168833,
+    "f1_weighted_std": 0.04521534871208838,
+    "per_class_accuracy": {
+      "W": 0.2033898305084746,
+      "i": 0.4507042253521127,
+      "n": 0.4583333333333333
+    },
+    "confusion_matrix": [
+      [
+        12,
+        24,
+        23
+      ],
+      [
+        8,
+        32,
+        31
+      ],
+      [
+        9,
+        17,
+        22
+      ]
+    ],
+    "class_labels": [
+      0,
+      1,
+      2
+    ],
+    "class_names": [
+      "W",
+      "i",
+      "n"
+    ],
+    "classification_report": "              precision    recall  f1-score   support\n\n           W     0.4138    0.2034    0.2727        59\n           i     0.4384    0.4507    0.4444        71\n           n     0.2895    0.4583    0.3548        48\n\n    accuracy                         0.3708       178\n   macro avg     0.3805    0.3708    0.3573       178\nweighted avg     0.3901    0.3708    0.3634       178\n"
+  }
+}

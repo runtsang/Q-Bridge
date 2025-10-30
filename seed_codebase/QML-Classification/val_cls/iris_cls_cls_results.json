@@ -1,0 +1,115 @@
+{
+  "dataset": {
+    "feature_names": [
+      "sepal length (cm)",
+      "sepal width (cm)",
+      "petal length (cm)",
+      "petal width (cm)"
+    ],
+    "target_name": "['setosa', 'versicolor', 'virginica']",
+    "dataset_name": "Iris-3class",
+    "description": "",
+    "n_samples": 150,
+    "n_features": 4,
+    "n_classes": 43,
+    "class_names": [
+      "I",
+      "r",
+      "i",
+      "s",
+      " ",
+      "m",
+      "u",
+      "l",
+      "t",
+      "i",
+      "c",
+      "l",
+      "a",
+      "s",
+      "s",
+      " ",
+      "c",
+      "l",
+      "a",
+      "s",
+      "s",
+      "i",
+      "f",
+      "i",
+      "c",
+      "a",
+      "t",
+      "i",
+      "o",
+      "n",
+      " ",
+      "(",
+      "3",
+      " ",
+      "c",
+      "l",
+      "a",
+      "s",
+      "s",
+      "e",
+      "s",
+      ")",
+      "."
+    ]
+  },
+  "settings": {
+    "optimizer": "COBYLA",
+    "num_reps": 2,
+    "kfold": 5,
+    "strict_fold_preprocess": false,
+    "use_pca": false,
+    "pca_n_components": null,
+    "pca_whiten": false,
+    "n_features_final": 4,
+    "explained_variance_ratio_cum": null,
+    "limit_samples": null,
+    "feature_map": "DEFAULT",
+    "ansatz": "DEFAULT"
+  },
+  "metrics": {
+    "accuracy_mean": 0.38,
+    "accuracy_std": 0.08844332774281066,
+    "f1_macro_mean": 0.37515723406529705,
+    "f1_macro_std": 0.07817265724768425,
+    "f1_weighted_mean": 0.37874302548331357,
+    "f1_weighted_std": 0.08078172507605018,
+    "per_class_accuracy": {
+      "I": 0.32,
+      "r": 0.4,
+      "i": 0.42
+    },
+    "confusion_matrix": [
+      [
+        16,
+        13,
+        21
+      ],
+      [
+        13,
+        20,
+        17
+      ],
+      [
+        11,
+        18,
+        21
+      ]
+    ],
+    "class_labels": [
+      0,
+      1,
+      2
+    ],
+    "class_names": [
+      "I",
+      "r",
+      "i"
+    ]
+  }
+}

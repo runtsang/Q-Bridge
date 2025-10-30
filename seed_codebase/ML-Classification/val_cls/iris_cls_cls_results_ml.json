@@ -1,0 +1,124 @@
+{
+  "dataset": {
+    "feature_names": [
+      "sepal length (cm)",
+      "sepal width (cm)",
+      "petal length (cm)",
+      "petal width (cm)"
+    ],
+    "target_name": "['setosa', 'versicolor', 'virginica']",
+    "dataset_name": "Iris-3class",
+    "description": "",
+    "n_samples": 150,
+    "n_features": 4,
+    "n_classes": 43,
+    "class_names": [
+      "I",
+      "r",
+      "i",
+      "s",
+      " ",
+      "m",
+      "u",
+      "l",
+      "t",
+      "i",
+      "c",
+      "l",
+      "a",
+      "s",
+      "s",
+      " ",
+      "c",
+      "l",
+      "a",
+      "s",
+      "s",
+      "i",
+      "f",
+      "i",
+      "c",
+      "a",
+      "t",
+      "i",
+      "o",
+      "n",
+      " ",
+      "(",
+      "3",
+      " ",
+      "c",
+      "l",
+      "a",
+      "s",
+      "s",
+      "e",
+      "s",
+      ")",
+      "."
+    ]
+  },
+  "settings": {
+    "hidden_dims": [
+      8,
+      8
+    ],
+    "dropout": 0.0,
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "epochs": 1,
+    "batch_size": 32,
+    "kfold": 5,
+    "random_state": 42,
+    "strict_fold_preprocess": false,
+    "use_pca": false,
+    "pca_n_components": null,
+    "pca_whiten": false,
+    "n_features_final": 4,
+    "explained_variance_ratio_cum": null,
+    "limit_samples": null,
+    "class_weight": null,
+    "device": "cpu"
+  },
+  "metrics": {
+    "accuracy_mean": 0.33999999999999997,
+    "accuracy_std": 0.07118052168020875,
+    "f1_macro_mean": 0.16773310494240729,
+    "f1_macro_std": 0.026780522524009667,
+    "f1_weighted_mean": 0.1768006851727782,
+    "f1_weighted_std": 0.06220740808381622,
+    "per_class_accuracy": {
+      "I": 0.64,
+      "r": 0.38,
+      "i": 0.0
+    },
+    "confusion_matrix": [
+      [
+        32,
+        18,
+        0
+      ],
+      [
+        31,
+        19,
+        0
+      ],
+      [
+        27,
+        23,
+        0
+      ]
+    ],
+    "class_labels": [
+      0,
+      1,
+      2
+    ],
+    "class_names": [
+      "I",
+      "r",
+      "i"
+    ],
+    "classification_report": "              precision    recall  f1-score   support\n\n           I     0.3556    0.6400    0.4571        50\n           r     0.3167    0.3800    0.3455        50\n           i     0.0000    0.0000    0.0000        50\n\n    accuracy                         0.3400       150\n   macro avg     0.2241    0.3400    0.2675       150\nweighted avg     0.2241    0.3400    0.2675       150\n"
+  }
+}

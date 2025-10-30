@@ -1,0 +1,40 @@
+{
+  "dataset": {
+    "feature_names": [
+      "sepal length (cm)",
+      "sepal width (cm)",
+      "petal width (cm)"
+    ],
+    "target_name": "petal length (cm)",
+    "dataset_name": "Iris-Regression-3f",
+    "description": "Predict petal length from remaining 3 features.",
+    "n_samples": 150,
+    "n_features": 3
+  },
+  "settings": {
+    "hidden_dims": [
+      64,
+      32
+    ],
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "epochs": 200,
+    "batch_size": 32,
+    "kfold": 5,
+    "strict_fold_preprocess": false,
+    "use_pca": false,
+    "pca_n_components": null,
+    "pca_whiten": false,
+    "n_features_final": 3,
+    "explained_variance_ratio_cum": null,
+    "limit_samples": null,
+    "target_on_original_scale": false
+  },
+  "metrics": {
+    "avg_mse": 0.02609966135273748,
+    "std_mse": 0.008535849732787742,
+    "residual_mean": 0.0032037916779515457,
+    "residual_std": 0.16152212564110766,
+    "num_residuals": 150
+  }
+}

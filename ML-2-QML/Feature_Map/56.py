@@ -1,0 +1,261 @@
+"""Extended ZZFeatureMap builder with optional higher‑order interactions and rotations.
+
+Features
+--------
+- **Higher‑order entanglement**: include 3‑qubit ZZ terms via CCX–P–CCX when `higher_order=True`.
+- **Pre/post rotations**: apply a global RZ(π/2) to all qubits before or after the main encoding.
+- **Flexible entanglement**: `full`, `linear`, `circular`, explicit list or callable.
+- **Data mapping**: override default φ₁ and φ₂ (and φ₃) with a user‑supplied function.
+- **Barrier insertion**: optional barriers between layers for readability/debugging.
+- **Parameter handling**: exposes `input_params` for Qiskit binding workflows.
+
+Usage
+-----
+```python
+from zz_feature_map_extended import zz_feature_map_extended, ZZFeatureMapExtended
+
+# Functional style
+qc = zz_feature_map_extended(feature_dimension=4, reps=3, higher_order=True)
+
+# OO style
+qc = ZZFeatureMapExtended(feature_dimension=4, reps=3, higher_order=True)
+```
+"""
+
+from __future__ import annotations
+
+from math import pi
+from typing import Callable, Iterable, List, Sequence, Tuple, Union
+import itertools
+
+from qiskit import QuantumCircuit
+from qiskit.circuit import ParameterExpression, ParameterVector
+
+
+# ---------------------------------------------------------------------------
+# Utilities
+# ---------------------------------------------------------------------------
+
+def _resolve_entanglement(
+    num_qubits: int,
+    entanglement: str | Sequence[Tuple[int, int]] | Callable[[int], Sequence[Tuple[int, int]]],
+) -> List[Tuple[int, int]]:
+    """Return a list of two‑qubit pairs according to a simple entanglement spec.
+
+    Supported specs:
+      - ``"full"``: all‑to‑all pairs (i < j)
+      - ``"linear"``: nearest neighbors (0,1), (1,2), …
+      - ``"circular"``: linear plus wrap‑around (n‑1,0) if n > 2
+      - explicit list of pairs like ``[(0, 2), (1, 3)]``
+      - callable: ``f(num_qubits) -> sequence of (i, j)``
+    """
+    if isinstance(entanglement, str):
+        if entanglement == "full":
+            return [(i, j) for i in range(num_qubits) for j in range(i + 1, num_qubits)]
+        if entanglement == "linear":
+            return [(i, i + 1) for i in range(num_qubits - 1)]
+        if entanglement == "circular":
+            pairs = [(i, i + 1) for i in range(num_qubits - 1)]
+            if num_qubits > 2:
+                pairs.append((num_qubits - 1, 0))
+            return pairs
+        raise ValueError(f"Unknown entanglement string: {entanglement!r}")
+
+    if callable(entanglement):
+        pairs = list(entanglement(num_qubits))
+        return [(int(i), int(j)) for (i, j) in pairs]
+
+    # sequence of pairs
+    pairs = [(int(i), int(j)) for (i, j) in entanglement]  # type: ignore[arg-type]
+    # basic validation
+    for (i, j) in pairs:
+        if i == j:
+            raise ValueError("Entanglement pairs must connect distinct qubits.")
+        if not (0 <= i < num_qubits and 0 <= j < num_qubits):
+            raise ValueError(f"Entanglement pair {(i, j)} out of range for n={num_qubits}.")
+    return pairs
+
+
+def _default_map_1(x: ParameterExpression) -> ParameterExpression:
+    """Default φ₁(x) = x."""
+    return x
+
+
+def _default_map_2(x: ParameterExpression, y: ParameterExpression) -> ParameterExpression:
+    """Default φ₂(x, y) = (π − x)(π − y)."""
+    return (pi - x) * (pi - y)
+
+
+def _default_map_3(x: ParameterExpression, y: ParameterExpression, z: ParameterExpression) -> ParameterExpression:
+    """Default φ₃(x, y, z) = (π − x)(π − y)(π − z)."""
+    return (pi - x) * (pi - y) * (pi - z)
+
+
+# ---------------------------------------------------------------------------
+# Extended ZZFeatureMap (CX–P–CX for ZZ, optional CCX–P–CCX for 3‑qubit ZZ)
+# ---------------------------------------------------------------------------
+
+def zz_feature_map_extended(
+    feature_dimension: int,
+    reps: int = 2,
+    entanglement: str | Sequence[Tuple[int, int]] | Callable[[int], Sequence[Tuple[int, int]]] = "full",
+    data_map_func: Callable[[Sequence[ParameterExpression]], ParameterExpression] | None = None,
+    parameter_prefix: str = "x",
+    insert_barriers: bool = False,
+    name: str | None = None,
+    higher_order: bool = False,
+    pre_rotation: bool = False,
+    post_rotation: bool = False,
+) -> QuantumCircuit:
+    """Build an extended ZZ‑feature‑map `QuantumCircuit`.
+
+    Parameters
+    ----------
+    feature_dimension : int
+        Number of qubits / input features. Must be >= 2.
+    reps : int, default 2
+        Number of repetitions of the encoding layer.
+    entanglement : str | Sequence[Tuple[int, int]] | Callable[[int], Sequence[Tuple[int, int]]]
+        Entanglement pattern.
+    data_map_func : Callable[[Sequence[ParameterExpression]], ParameterExpression] | None
+        User‑supplied mapping from raw feature values to phase angles.
+        If None, defaults to the canonical φ₁ and φ₂ (and φ₃ for higher‑order).
+    parameter_prefix : str, default "x"
+        Prefix for autogenerated parameter names.
+    insert_barriers : bool, default False
+        Insert barriers between logical layers for readability.
+    name : str | None, default None
+        Optional circuit name.
+    higher_order : bool, default False
+        Include 3‑qubit ZZ interactions via CCX–P–CCX.
+    pre_rotation : bool, default False
+        Apply a global RZ(π/2) to all qubits before the main encoding.
+    post_rotation : bool, default False
+        Apply a global RZ(π/2) to all qubits after the main encoding.
+
+    Returns
+    -------
+    QuantumCircuit
+        The constructed feature‑map circuit with an ``input_params`` attribute.
+    """
+    if feature_dimension < 2:
+        raise ValueError("feature_dimension must be >= 2 for ZZFeatureMapExtended.")
+    if reps < 1:
+        raise ValueError("reps must be a positive integer.")
+
+    n = int(feature_dimension)
+    qc = QuantumCircuit(n, name=name or "ZZFeatureMapExtended")
+    x = ParameterVector(parameter_prefix, n)
+
+    # Resolve mapping functions
+    if data_map_func is None:
+        map1, map2, map3 = _default_map_1, _default_map_2, _default_map_3
+    else:
+        def map1(xi: ParameterExpression) -> ParameterExpression:
+            return data_map_func([xi])
+        def map2(xi: ParameterExpression, xj: ParameterExpression) -> ParameterExpression:
+            return data_map_func([xi, xj])
+        def map3(xi: ParameterExpression, xj: ParameterExpression, xk: ParameterExpression) -> ParameterExpression:
+            return data_map_func([xi, xj, xk])
+
+    pairs = _resolve_entanglement(n, entanglement)
+
+    if pre_rotation:
+        qc.rz(pi / 2, range(n))
+
+    for rep in range(int(reps)):
+        # Basis preparation
+        qc.h(range(n))
+        if insert_barriers:
+            qc.barrier()
+
+        # Single‑qubit phases
+        for i in range(n):
+            qc.p(2 * map1(x[i]), i)
+
+        if insert_barriers:
+            qc.barrier()
+
+        # Two‑qubit ZZ via CX–P–CX
+        for (i, j) in pairs:
+            angle_2 = 2 * map2(x[i], x[j])
+            qc.cx(i, j)
+            qc.p(angle_2, j)
+            qc.cx(i, j)
+
+        # Optional higher‑order 3‑qubit ZZ via CCX–P–CCX
+        if higher_order:
+            for (i, j, k) in itertools.combinations(range(n), 3):
+                angle_3 = 2 * map3(x[i], x[j], x[k])
+                qc.ccx(i, j, k)
+                qc.p(angle_3, k)
+                qc.ccx(i, j, k)
+
+        if insert_barriers and rep!= reps - 1:
+            qc.barrier()
+
+    if post_rotation:
+        qc.rz(pi / 2, range(n))
+
+    qc.input_params = x  # type: ignore[attr-defined]
+    return qc
+
+
+class ZZFeatureMapExtended(QuantumCircuit):
+    """Class‑style wrapper for the extended ZZFeatureMap.
+
+    Parameters
+    ----------
+    feature_dimension : int
+        Number of qubits / input features.
+    reps : int, default 2
+        Number of repetitions of the encoding layer.
+    entanglement : str | Sequence[Tuple[int, int]] | Callable[[int], Sequence[Tuple[int, int]]]
+        Entanglement pattern.
+    data_map_func : Callable[[Sequence[ParameterExpression]], ParameterExpression] | None
+        User‑supplied mapping from raw feature values to phase angles.
+    parameter_prefix : str, default "x"
+        Prefix for autogenerated parameter names.
+    insert_barriers : bool, default False
+        Insert barriers between logical layers for readability.
+    name : str, default "ZZFeatureMapExtended"
+        Circuit name.
+    higher_order : bool, default False
+        Include 3‑qubit ZZ interactions via CCX–P–CCX.
+    pre_rotation : bool, default False
+        Apply a global RZ(π/2) to all qubits before the main encoding.
+    post_rotation : bool, default False
+        Apply a global RZ(π/2) to all qubits after the main encoding.
+    """
+
+    def __init__(
+        self,
+        feature_dimension: int,
+        reps: int = 2,
+        entanglement: str | Sequence[Tuple[int, int]] | Callable[[int], Sequence[Tuple[int, int]]] = "full",
+        data_map_func: Callable[[Sequence[ParameterExpression]], ParameterExpression] | None = None,
+        parameter_prefix: str = "x",
+        insert_barriers: bool = False,
+        name: str = "ZZFeatureMapExtended",
+        higher_order: bool = False,
+        pre_rotation: bool = False,
+        post_rotation: bool = False,
+    ) -> None:
+        built = zz_feature_map_extended(
+            feature_dimension=feature_dimension,
+            reps=reps,
+            entanglement=entanglement,
+            data_map_func=data_map_func,
+            parameter_prefix=parameter_prefix,
+            insert_barriers=insert_barriers,
+            name=name,
+            higher_order=higher_order,
+            pre_rotation=pre_rotation,
+            post_rotation=post_rotation,
+        )
+        super().__init__(built.num_qubits, name=name)
+        self.compose(built, inplace=True)
+        self.input_params = built.input_params  # type: ignore[attr-defined]
+
+
+__all__ = ["ZZFeatureMapExtended", "zz_feature_map_extended"]

@@ -1,0 +1,4 @@
+﻿1. i am using this ZZfeaturemap in my code from this link https://github.com/Qiskit/qiskit/blob/stable/2.2/qiskit/circuit/library/data_preparation/_zz_feature_map.py, can you prepare a standalone file that contains all the content to use the class ZZFeatureMap
+2. this file worked without any issue. now do the same with the RealAmplitudes as well, from this link https://github.com/Qiskit/qiskit/blob/stable/2.2/qiskit/circuit/library/n_local/real_amplitudes.py#L139-L312
+3. create two more variations for ZZFeatureMap classes so that i want to test its variation
+4. create two more variations for RealAmplitudes classes so that i want to test its variation

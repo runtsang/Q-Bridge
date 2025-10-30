@@ -1,0 +1,709 @@
+{
+  "1": {
+    "id": 1,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "| An enhanced polynomial ZZ feature map that adds higher‑order interaction terms, optional pre/post‑rotations, and adaptive depth.  The new circuit preserves the original structure while providing richer expressivity for data encoding.",
+    "length": 10368
+  },
+  "2": {
+    "id": 2,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The controlled‑modification version symmetrises the two‑qubit entanglement by using a single, globally shared pair‑scale and a unified pair‑mapping function applied to every qubit pair. This reduces the parameter count, improves trainability, and keeps the circuit fully compatible with Qiskit’s data‑encoding workflow. Users can still customise entanglement pattern, data mapping, and barrier insertion as in the original seed.",
+    "length": 8893
+  },
+  "3": {
+    "id": 3,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "| A richer ZZ feature map that extends the original polynomial encoding with optional higher‑order single‑qubit terms, user‑controlled pre/post Hadamard rotations, and a normalisation toggle.  The design keeps the original structure but adds depth and expressive power for larger feature spaces.",
+    "length": 9598
+  },
+  "4": {
+    "id": 4,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The controlled‑modification feature map extends the base polynomial ZZ map by introducing shared‑parameter symmetries, data rescaling, and optional per‑qubit coefficient specifications, while keeping the core structure and Qiskit interface identical.",
+    "length": 11442
+  },
+  "5": {
+    "id": 5,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "The ExtendedZZFeatureMap augments the canonical ZZFeatureMap by adding optional three‑qubit CCZ interactions, pre‑ and post‑rotation layers, and a flexible data‑mapping function. It keeps the same parameter binding interface while increasing expressivity for higher‑order correlations.",
+    "length": 9907
+  },
+  "6": {
+    "id": 6,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "| The extended feature map builds on the original polynomial ZZ map by adding optional three‑qubit interactions, configurable pre/post‑rotations, and a feature‑vector normalisation toggle.  It keeps the single‑ and two‑qubit structure intact, while increasing expressive power for larger datasets and deeper circuit depths.  The implementation remains fully compatible with Qiskit's data‑encoding workflows and supports parameter binding, error checking, and optional barriers.",
+    "length": 10892
+  },
+  "7": {
+    "id": 7,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "| A controlled‑modification of the canonical ZZFeatureMap that introduces parameter sharing across all ZZ couplings and a data‑normalisation stage. The map remains compatible with Qiskit’s parameter binding workflow while offering a more compact entanglement structure and optional pre‑rotation for improved expressibility.",
+    "length": 9112
+  },
+  "8": {
+    "id": 8,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This upgraded ZZFeatureMap introduces a controlled‑modification scaling paradigm by allowing the user to swap the CX–P–CX entanglement with a native RZZ gate, to share pair‑wise parameters across all entanglers, and to optionally normalise data to the [0, π] range. The core structure (Hadamard prep, single‑qubit phases, and pairwise interactions) is preserved, enabling direct integration with existing Qiskit data‑encoding workflows while offering richer expressive power for advanced classification experiments.",
+    "length": 10387
+  },
+  "9": {
+    "id": 9,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This feature map extends the base polynomial ZZ map by introducing a shared scaling factor for single‑qubit phases, optional pre‑ and post‑rotations, and a scalar data scaling. It preserves the original entanglement pattern while allowing more expressive control over the encoding.",
+    "length": 8414
+  },
+  "10": {
+    "id": 10,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This upgraded feature map symmetrises the ZZ interactions and re‑parameterises the single‑qubit terms so that the circuit remains recognisable while introducing a new interaction order. It now supports a symmetric pair‑weight function that depends on the distance between qubits, and the single‑qubit map is expressed as an odd‑degree polynomial with a fixed sign pattern.",
+    "length": 10001
+  },
+  "11": {
+    "id": 11,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This variant symmetrises the two‑qubit interactions by using a single shared pair‑weight parameter applied uniformly across all entangled pairs. The circuit automatically normalises the total interaction strength if requested and offers optional feature‑scaling to keep the phase budget bounded. The single‑qubit polynomial map remains unchanged, preserving the seed’s expressive power.",
+    "length": 8698
+  },
+  "12": {
+    "id": 12,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "The upgraded ZZFeatureMap extends the canonical encoding by adding optional higher‑order (three‑qubit) ZZ interactions, pre‑ and post‑rotation knobs, and a normalize toggle. It keeps the original Hadamard + CX‑P‑CX structure while allowing richer entanglement and data scaling, and remains fully compatible with Qiskit’s data‑encoding workflow.",
+    "length": 9951
+  },
+  "13": {
+    "id": 13,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "| Adds adaptive depth, optional pre/post rotations, higher‑order (3‑body) ZZ interactions, and a normalisation toggle to the canonical ZZFeatureMap while preserving its parameter‑vector interface.",
+    "length": 12311
+  },
+  "14": {
+    "id": 14,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "Adds optional three‑body interactions, pre/post rotations, and normalisation, preserving the original structure while increasing expressiveness.",
+    "length": 11572
+  },
+  "15": {
+    "id": 15,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "| An enriched polynomial ZZ feature map that adds higher‑order pair and triple interactions, optional pre/post rotations, adaptive depth, and a normalization toggle. The structure preserves the original seed while greatly expanding expressive capacity.",
+    "length": 12206
+  },
+  "16": {
+    "id": 16,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The feature map replaces the uniform RZZ coupling with a data‑dependent interaction that scales with the squared difference of feature values.  The circuit keeps the original single‑qubit rotations and entanglement topology, adding a shared scaling parameter and optional normalisation to enable richer, data‑aware encoding while remaining recognisable.",
+    "length": 8718
+  },
+  "17": {
+    "id": 17,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The upgraded feature map introduces a symmetric, distance‑weighted pairwise entanglement schedule that mirrors data across qubits. It replaces the flat RZZ schedule with a tunable weight matrix, normalises the interaction angles, and optionally shares parameters across layers. This keeps the original RZZ‑based structure while providing a more expressive, balanced encoding.",
+    "length": 9561
+  },
+  "18": {
+    "id": 18,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "extension",
+    "summary": "| An extended ZZ‑feature map that augments the original RZZ variant with optional higher‑order (triple) couplings, adaptive depth, and configurable pre/post rotations.  The interface remains compatible with Qiskit’s data‑encoding workflow, exposing both a functional helper and a `QuantumCircuit` subclass.",
+    "length": 11155
+  },
+  "19": {
+    "id": 19,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extended polynomial ZZ feature map supporting single, pair, and triple–body interactions, optional pre/post‑rotations, and a helper for normalising classical data. Maintains the original interface while adding richer encoding capacity.",
+    "length": 11308
+  },
+  "20": {
+    "id": 20,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The upgraded ZZ feature map introduces symmetric pair entanglement, a global entanglement strength parameter, and optional feature scaling. It preserves the canonical structure while allowing a single γ to tune all ZZ interactions, and supports both functional and OO interfaces for Qiskit data encoding workflows.",
+    "length": 8511
+  },
+  "21": {
+    "id": 21,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Enhances the canonical ZZFeatureMap by introducing symmetric pair‑wise couplings, optional shared single‑qubit phases, and configurable three‑qubit interactions. The module offers a functional interface and a subclassed circuit, both supporting data rescaling and entanglement specification while providing robust parameter validation.",
+    "length": 10765
+  },
+  "22": {
+    "id": 22,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "| An extended polynomial ZZ feature map that enriches the original encoding by adding optional third‑order interactions, a feature‑scaling factor, and configurable interaction depth. The design preserves the core H/RY basis preparation and pair‑wise ZZ entanglement pattern while allowing users to explore higher‑order correlations without altering the overall circuit structure.",
+    "length": 10525
+  },
+  "23": {
+    "id": 23,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "extension",
+    "summary": "The extended RZZ feature map augments the original encoding with configurable higher‑order interaction layers, optional pre‑ and post‑single‑qubit rotations, and a flexible interaction order. It preserves the core structure while adding a `pre_rotations` flag, `post_rotations` flag, and an `order` parameter that adds additional entanglement patterns beyond pairwise RZZ gates. The circuit remains fully parameter‑bound and compatible with Qiskit’s data‑binding workflow.",
+    "length": 8712
+  },
+  "24": {
+    "id": 24,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This controlled‑modification version of ZZFeatureMap introduces a symmetric entanglement topology, optional shared‑parameter encoding, and flexible data mapping, while preserving the canonical CX–P–CX ZZ construction. The circuit remains fully parameter‑binding‑compatible, supports configurable depth and optional barriers, and includes robust validation of inputs.",
+    "length": 7754
+  },
+  "25": {
+    "id": 25,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The ControlledZZFeatureMap extends the canonical ZZ feature map by introducing shared parameters for phase and interaction terms, optional pre/post Y rotations, and a flexible entanglement pattern. It keeps the same CX–P–CX structure while allowing more compact parameterisation and easier optimisation. The design supports data re‑parameterisation and optional normalisation, making it suitable for high‑dimensional datasets.",
+    "length": 8319
+  },
+  "26": {
+    "id": 26,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "The ExtendedZZFeatureMap augments the canonical ZZFeatureMap with optional higher‑order ZZ interactions, adaptive depth, and pre/post‑rotation hooks. It retains the original data‑encoding interface while offering richer expressive power for quantum kernels.",
+    "length": 12511
+  },
+  "27": {
+    "id": 27,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "This upgraded feature map expands the original polynomial ZZ feature map by incorporating optional three‑qubit interactions, adaptive basis preparations, and feature‑scaling options. It preserves the core parameter‑binding interface while allowing deeper entanglement and richer phase mapping, making it suitable for higher‑dimensional datasets or deeper variational circuits.",
+    "length": 11907
+  },
+  "28": {
+    "id": 28,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "| The extended feature map augments the original polynomial ZZ map with higher‑order single‑qubit and pair interactions, optional normalisation, and configurable pre/post‑rotations.  It preserves the original structure while adding depth and expressive power, making it suitable for richer datasets and deeper variational circuits.",
+    "length": 10051
+  },
+  "29": {
+    "id": 29,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "| A controlled‑modification of the polynomial ZZ feature map that introduces symmetrical two‑qubit phase application and an adjustable interaction exponent. The map retains the original single‑qubit polynomial structure while allowing users to tune pairwise interactions and enforce symmetry across all entanglement pairs.",
+    "length": 9424
+  },
+  "30": {
+    "id": 30,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "A controlled‑modification version of the original RZZ feature map. The circuit now symmetrises the two‑qubit couplings by applying a single RZZ gate per pair and a shared scaling factor that depends on the number of qubits, thus reducing depth while preserving the expressive power. It also introduces a per‑feature “phase‑shift” re‑parameterisation that keeps the map invariant to a global phase shift of the input data.",
+    "length": 8113
+  },
+  "31": {
+    "id": 31,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "| Extended ZZFeatureMap adds higher‑order ZZ interactions, optional Rx/Ry pre‑ and post‑rotations, adaptive repetition depth, and a global data‑scaling factor. The new circuit preserves the original structure while providing richer expressive power for classification tasks. All parameters are fully bindable and the module exposes both a functional builder and a class wrapper.",
+    "length": 11538
+  },
+  "32": {
+    "id": 32,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The new feature map symmetrises pair interactions and collapses single‑qubit weights into a shared parameter, reducing the parameter count while preserving expressive power. It offers a choice between product and average pair interactions, enabling flexible encoding strategies. The design remains fully compatible with Qiskit data encoding workflows and supports parameter binding via the `input_params` attribute.",
+    "length": 8381
+  },
+  "33": {
+    "id": 33,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This upgraded polynomial ZZ feature map introduces shared coupling coefficients, optional global scaling, and a symmetric entanglement scheme.  The circuit preserves the original structure while allowing users to tune a single pair‑weight and single‑qubit coefficient, and to apply a global scale factor to all features.  It remains fully compatible with Qiskit’s parameter binding workflow and includes both a functional helper and an OO subclass for flexible use.",
+    "length": 11154
+  },
+  "34": {
+    "id": 34,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The feature map introduces a shared global scaling factor for all RZZ interactions and an optional normalisation of input data, while keeping the original entanglement pattern. This controlled modification preserves the RZZ‑based structure but synchronises pairwise coupling strengths and offers a lightweight data‑re‑parameterisation for better numerical stability.",
+    "length": 8401
+  },
+  "35": {
+    "id": 35,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Controlled‑modification variant of the polynomial ZZ feature map that introduces symmetric pair interactions, optional shared pair weights, and data re‑parameterisation while preserving the original structure and parameter binding semantics.",
+    "length": 10406
+  },
+  "36": {
+    "id": 36,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Symmetrised ZZ feature map with shared parameters and optional scaling, adding a symmetric entanglement pattern and optional data scaling. Provides both functional and class interfaces for seamless integration.",
+    "length": 11702
+  },
+  "37": {
+    "id": 37,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The upgraded feature map introduces a symmetrised entanglement pattern and a shared‑parameter data map that enforces identical data‑dependent rotations on each qubit pair. This controlled modification preserves the canonical ZZ‑feature‑map structure while adding a global constraint that reduces parameter count and promotes better generalisation for small‑qubit classifiers.",
+    "length": 8947
+  },
+  "38": {
+    "id": 38,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "This extended polynomial ZZ feature map enriches the original encoding by adding higher‑order multi‑qubit interactions, optional data normalisation, and configurable pre‑/post‑basis rotations. The core structure and parameter‑binding interface remain unchanged, allowing seamless integration with Qiskit’s data‑encoding workflows.",
+    "length": 13613
+  },
+  "39": {
+    "id": 39,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The controlled‑modification variant augments the base polynomial ZZ feature map by (i) sharing single‑qubit polynomial coefficients across all qubits, (ii) allowing per‑pair or global pair weights, (iii) optional data scaling/normalisation, and (iv) replacing the CX‑P‑CX construction with a single controlled‑phase (CP) gate for cleaner entanglement.  All other structural elements mirror the seed, preserving compatibility with Qiskit’s data‑encoding pipelines.",
+    "length": 10630
+  },
+  "40": {
+    "id": 40,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the original RZZ‑based feature map by adding configurable higher‑order interaction layers, optional pre‑ and post‑Z rotations, and a user‑supplied data‑rescaling function. The core RZZ entanglement is preserved while allowing deeper feature extraction with minimal changes to the public API.",
+    "length": 12009
+  },
+  "41": {
+    "id": 41,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "This extended polynomial ZZ feature map adds optional triple‑qubit ZZ interactions, configurable pre‑ and post‑rotations, and adaptive circuit depth based on the feature dimension. The design retains the original basis‑preparation and pair‑interaction logic while providing richer expressive power for advanced classification tasks.",
+    "length": 10252
+  },
+  "42": {
+    "id": 42,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "The extended feature map augments the canonical ZZFeatureMap with optional triple‑qubit interactions, pre/post rotations, and lightweight normalisation, while keeping the original structure and Qiskit data‑encoding compatibility.",
+    "length": 13674
+  },
+  "43": {
+    "id": 43,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The upgraded feature map symmetrises the ZZ entanglement by averaging feature values, optionally adds a shared global phase, and supports normalisation of input angles. It retains the canonical H‑prep, single‑qubit P‑rotations, and CX‑P‑CX structure while providing controlled modifications for enhanced expressivity and robustness. Both functional and OO interfaces are available, and the circuit remains fully parameterisable for arbitrary feature vectors.",
+    "length": 9806
+  },
+  "44": {
+    "id": 44,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This controlled‑modification variant of the RZZ feature map symmetrises the pairwise entanglement and introduces a data‑dependent scaling factor based on the sum of the two features. The circuit remains fully compatible with Qiskit's data‑encoding API while offering a more balanced interaction profile and a tunable pair‑scale that can be chosen per sample.",
+    "length": 7569
+  },
+  "45": {
+    "id": 45,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The upgraded feature map introduces shared entanglement parameters for each qubit pair, reducing the total parameter count while preserving the fundamental ZZ interaction structure. It optionally normalises input data and allows a custom data‑mapping function, making it well‑suited for high‑dimensional classification tasks. The design remains fully compatible with Qiskit’s parameter binding and data‑encoding workflows.",
+    "length": 8779
+  },
+  "46": {
+    "id": 46,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The feature map now symmetrises the two‑qubit interaction term, replaces the linear product by a cosine‑based coupling that respects the original data‑dependent phase, and adds a shared‑parameter scaling factor to all single‑qubit phases. All changes preserve the original parameter layout and allow for straightforward binding.",
+    "length": 8971
+  },
+  "47": {
+    "id": 47,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "| The extended ZZFeatureMap enriches the canonical encoding with optional higher‑order triplet interactions, pre/post rotations, data scaling, and adaptive depth. It preserves the original structure while providing additional expressive power for complex feature mappings.",
+    "length": 10839
+  },
+  "48": {
+    "id": 48,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "The upgraded feature map augments the canonical ZZFeatureMap with optional higher‑order (three‑qubit ZZ) couplings, configurable pre‑ and post‑rotation layers, and a normalisation toggle.  It retains the original H‑P‑CX‑P‑CX backbone while exposing a richer parameter space for expressive encoding of classical data.",
+    "length": 9671
+  },
+  "49": {
+    "id": 49,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "| An enriched polynomial ZZ feature map that adds optional three‑body interactions, adaptive depth, and global rotations. The circuit preserves the original basis‑prep and ZZ‑phase pattern while allowing higher‑order terms, per‑rep extra rotations, and a pre/post global rotation. It remains fully compatible with Qiskit’s data‑encoding workflows, exposing a functional API and a `QuantumCircuit` subclass.",
+    "length": 13677
+  },
+  "50": {
+    "id": 50,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "| Extends the original polynomial ZZ feature map with optional triple‑qubit interactions, adaptive depth, and pre/post‑rotation hooks, while preserving the original parameter binding interface.  The new circuit supports higher‑order correlations and flexible entanglement patterns, making it suitable for richer quantum kernel constructions.",
+    "length": 11664
+  },
+  "51": {
+    "id": 51,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This upgraded feature map symmetrises the pairwise entanglement by applying the same RZZ angle to all qubit pairs, independent of the data. It introduces a shared pair‑scale factor and an optional global normalisation parameter, making the circuit more robust to noise while preserving the original RZZ‑based structure and providing a new “cyclic” entanglement mode.",
+    "length": 8652
+  },
+  "52": {
+    "id": 52,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Symmetrises all‑to‑all ZZ couplings, introduces a normalised quadratic data mapping, and adds a global scaling factor for all angles. The design preserves the core structure while reducing parameter redundancy and improving robustness to feature scaling. It remains fully compatible with Qiskit’s data‑encoding workflows.",
+    "length": 7825
+  },
+  "53": {
+    "id": 53,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "extension",
+    "summary": "This upgraded feature map extends the base RZZ‑entangled encoder by adding optional higher‑order interaction layers, a configurable normalisation factor, and a pre‑rotation layer that can be toggled. It preserves the original parameterisation interface while allowing deeper, richer embeddings for larger feature spaces.",
+    "length": 10476
+  },
+  "54": {
+    "id": 54,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The upgraded map symmetrises the entanglement pattern and replaces the standard RZZ pair‑angle with a *shared* interaction parameter that is a weighted sum of the two feature values.  The design keeps the original single‑qubit rotations, but introduces a global coupling strength that can be tuned independently of the data.  The module offers a functional builder and an OO wrapper, both of which validate the entanglement specification and expose the same input parameter vector for binding.",
+    "length": 8138
+  },
+  "55": {
+    "id": 55,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "A controlled‑modification extension of the polynomial ZZ feature map that adds distance‑weighted symmetric pair couplings, optional per‑qubit coefficient vectors, data re‑parameterisation, and a scaling factor.  The circuit remains fully compatible with Qiskit’s parameter binding and data‑encoding workflow.",
+    "length": 11221
+  },
+  "56": {
+    "id": 56,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "The Extended ZZFeatureMap augments the canonical ZZ encoding by adding optional 3‑qubit ZZ interactions, configurable pre/post rotations, and a flexible entanglement specification. It retains the original Hadamard + ZZ‑CX–P–CX structure while allowing users to tailor depth, interaction order, and rotation schemes for richer feature representations.",
+    "length": 9901
+  },
+  "57": {
+    "id": 57,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This upgraded feature map extends the polynomial ZZ feature map by introducing shared polynomial coefficients, a symmetric pair interaction, optional feature scaling, and customizable mapping functions. The new design keeps the original structure but adds controlled modifications that enhance expressivity while preserving recognisability.",
+    "length": 11897
+  },
+  "58": {
+    "id": 58,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "The Extended ZZFeatureMap augments the canonical design with optional third‑order ZZ interactions, configurable pre/post rotations, and data normalisation. It supports flexible entanglement patterns and validates parameter ranges, enabling richer feature representations while remaining fully Qiskit‑compatible.",
+    "length": 13245
+  },
+  "59": {
+    "id": 59,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The feature map now uses a two‑stage symmetric polynomial for each qubit and a shared pairwise interaction that is automatically gated by a threshold. The circuit preserves the original depth and entanglement structure, but each pair interaction is applied only when the product of the corresponding features exceeds a user‑defined threshold, giving a controllable sparsity in the encoding. This design remains fully compatible with Qiskit’s parameter binding and data‑encoding workflows.",
+    "length": 9320
+  },
+  "60": {
+    "id": 60,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds symmetric entanglement with shared scaling per repetition, optional data normalisation to [0, π], and a global pair‑scaling factor. The new feature map preserves the original RZZ‑encoding structure while enabling more stable and efficient training, and remains fully compatible with Qiskit’s binding interface in both functional and class‑style usage.",
+    "length": 8875
+  },
+  "61": {
+    "id": 61,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This upgraded ZZFeatureMap introduces a shared interaction parameter, optional symmetrised entanglement, and a normalisation toggle. It preserves the original Hadamard‑plus‑ZZ structure while reducing parameter count and offering more flexible data mapping.",
+    "length": 9938
+  },
+  "62": {
+    "id": 62,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The SymmetricZZFeatureMap extends the canonical ZZ feature map by introducing shared parameters across qubits and pairwise entanglers, optional data normalisation, and a configurable entanglement structure. It preserves the original CX–P–CX ZZ construction while reducing parameter count and enabling more expressive, symmetry‑aware encodings.",
+    "length": 9091
+  },
+  "63": {
+    "id": 63,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "The extended feature map augments the polynomial ZZ encoding with a configurable triple‑body interaction layer and optional data scaling to [0, π]. It preserves the original single‑qubit polynomial and pair‑wise product maps, while adding an adaptive depth and optional barrier insertion. Users can toggle higher‑order interactions and data scaling without changing the original interface.",
+    "length": 8526
+  },
+  "64": {
+    "id": 64,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "The upgraded feature map adds optional higher‑order entanglement, configurable pre/post rotations, and feature normalisation while preserving the original ZZ‑entanglement structure.  It remains fully compatible with Qiskit's data‑encoding workflow and exposes both functional and OO APIs.",
+    "length": 12392
+  },
+  "65": {
+    "id": 65,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the polynomial ZZ feature map with higher‑order interaction terms, optional normalisation, and configurable pre‑/post‑rotation layers. The map supports arbitrary data scaling, adjustable entanglement depth, and triple‑interaction gates while maintaining compatibility with Qiskit’s parameter binding workflow.",
+    "length": 8971
+  },
+  "66": {
+    "id": 66,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "The ExtendedZZFeatureMap augments the canonical ZZ‑feature map by adding higher‑order ZZ interactions, optional data scaling, and pre/post‑rotation hooks. It preserves the original Hadamard‑phase‑entanglement pattern while allowing richer expressivity and flexible data preprocessing.",
+    "length": 10998
+  },
+  "67": {
+    "id": 67,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "The extended feature map augments the canonical ZZ encoding with optional higher‑order ZZ interactions, configurable pre/post‑rotations, and automatic feature normalisation. It preserves the original interface while providing richer expressivity and safer parameter handling.",
+    "length": 10865
+  },
+  "68": {
+    "id": 68,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The feature map is re‑parameterised by sharing a single global pair‑angle across all entangling gates and by symmetrising the data mapping. This controlled modification preserves the original circuit depth while enabling tighter control over coupling strengths and more efficient optimisation.",
+    "length": 9695
+  },
+  "69": {
+    "id": 69,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The controlled‑modification variant enriches the original polynomial ZZ‑feature map with symmetric pair‑phase gates, optional per‑pair weightings, and data‑normalisation. It preserves the polynomial single‑qubit mapping and flexible entanglement while providing a cleaner, more expressive interface for Qiskit data‑encoding workflows.",
+    "length": 8018
+  },
+  "70": {
+    "id": 70,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The upgraded feature map introduces a symmetrised coupling scheme that shares a single interaction parameter across each entangled pair, reducing the parameter count while preserving the RZZ‑based structure. It also adds optional normalisation of data before mapping and a flexible “interaction_order” that lets users choose between linear, quadratic, or cubic data interactions in the two‑qubit terms.",
+    "length": 8254
+  },
+  "71": {
+    "id": 71,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "This upgraded feature map extends the polynomial ZZFeatureMap by adding optional triplet‑phase interactions, configurable pre/post rotations, and flexible entanglement patterns while preserving the original interface and parameter binding semantics.",
+    "length": 10213
+  },
+  "72": {
+    "id": 72,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "The extended polynomial ZZ feature map enriches the seed by adding optional three‑qubit ZZ interactions, pre/post‑rotation knobs, and optional feature normalization. It retains the original parameter‑vector interface while offering deeper, higher‑order entanglement for richer data encoding.",
+    "length": 10138
+  },
+  "73": {
+    "id": 73,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The SymmetricZZFeatureMap is a controlled modification of the canonical ZZ feature map. It introduces symmetrical pair couplings with shared parameters, optional data scaling, and optional pre‑ and post‑rotations to enhance expressivity while preserving the core structure. The circuit remains Qiskit‑compatible and supports parameter binding for classical feature vectors.",
+    "length": 10892
+  },
+  "74": {
+    "id": 74,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the base RZZ‑entangled feature map by adding configurable higher‑order interaction layers, optional data rescaling, and a lightweight activation circuit. Depth grows linearly with interaction order while preserving the original single‑qubit rotations and entanglement patterns.",
+    "length": 9943
+  },
+  "75": {
+    "id": 75,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This variant introduces a symmetric pair‑coupling scheme that shares a single two‑qubit interaction angle across all entangling gates, reducing the number of independent parameters while preserving the overall depth and entanglement pattern of the original RZZ‑based map. The circuit still accepts arbitrary feature vectors and supports optional barriers, but the data‑mapping functions are now constrained to produce a single scalar per pair, which is then symmetrically applied across all entangling gates.",
+    "length": 7797
+  },
+  "76": {
+    "id": 76,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This upgraded map symmetrises the pairwise coupling by sharing a single interaction parameter for each qubit pair. The new design replaces the independent φ2 functions with a shared 2‑parameter RZZ angle that is parametrised by the two qubits’ individual data. It also adds optional normalisation and a guard against accidental zero‑scale values.",
+    "length": 7355
+  },
+  "77": {
+    "id": 77,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "| An enriched ZZ‑style feature map that augments the canonical pairwise entanglement with optional higher‑order interactions, adaptive depth, and user‑defined data transformations.  It retains the original interface while adding knobs for 3‑body ZZ gates, RZZ entanglers, and optional data pre‑rotation or normalization.",
+    "length": 12730
+  },
+  "78": {
+    "id": 78,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "extension",
+    "summary": "This upgraded feature map extends the original RZZ‑based encoding by adding optional data‑dependent pre‑rotations, a higher‑order interaction layer, and a symbolic normalisation option.  The new design keeps the same basic layout (H + P + RZZ) while providing a richer set of expressive parameters and a clearer interface for parameter binding.",
+    "length": 10317
+  },
+  "79": {
+    "id": 79,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "ZZFeatureMapPolyControlled extends the original polynomial ZZ feature map by adding symmetrised entanglement, optional pre‑rotations, data scaling, and a global phase option. The controlled‑modification keeps the overall structure intact while offering tighter coupling and more expressive parameter handling for Qiskit data‑encoding workflows.",
+    "length": 9045
+  },
+  "80": {
+    "id": 80,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The controlled‑modification ZZ‑feature‑map introduces a single shared parameter for all pairwise ZZ interactions, reducing the parameter count while preserving the canonical entanglement structure. Optional data normalisation ensures phase angles remain within a predictable range. The implementation remains fully compatible with Qiskit’s data‑encoding workflows, exposing both functional and OO interfaces.",
+    "length": 8244
+  },
+  "81": {
+    "id": 81,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The upgraded feature map introduces a shared pair‑wise parameter to control all ZZ entanglers, reducing parameter count while preserving expressive power. An optional global RY rotation provides additional flexibility, and the circuit remains fully compatible with Qiskit data‑encoding workflows. The design keeps the original structure but augments it with controlled parameter sharing and symmetry.",
+    "length": 8635
+  },
+  "82": {
+    "id": 82,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This module implements a controlled‑modification of the canonical ZZFeatureMap by introducing a shared, data‑derived entanglement phase across all qubit pairs, thereby enforcing symmetry and reducing parameter count. It supports optional data normalisation, custom entanglement patterns, and barrier insertion for clarity. The design remains fully compatible with Qiskit's data encoding workflow, exposing a helper function and a QuantumCircuit subclass.",
+    "length": 9402
+  },
+  "83": {
+    "id": 83,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The upgraded feature map symmetrises the RZZ entanglement by sharing a single pair parameter across all qubit pairs when desired, while re‑parameterising the data through a user‑supplied map that preserves the overall circuit depth.  It keeps the original layer structure and parameter count but replaces the per‑pair angle with a shared or independent parameter, allowing easier optimisation and clearer data‑feature relationships.",
+    "length": 7255
+  },
+  "84": {
+    "id": 84,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This controlled‑modification feature map introduces a shared pair‑scaling parameter that couples all RZZ interactions, optionally normalises the rotation angles to keep them bounded, and mirrors each entanglement pair to enforce symmetry. It also allows a custom data mapping function to re‑parameterise the interaction term while preserving the original RZZ structure.",
+    "length": 7061
+  },
+  "85": {
+    "id": 85,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The upgraded map symmetrises ZZ couplings by sharing a single interaction parameter for each qubit pair, adds optional data‑re‑scaling and a user‑defined pre‑rotation.  It preserves the original Hadamard‑pre‑phase structure while offering a more expressive, data‑aware encoding that remains Qiskit‑compatible.",
+    "length": 10584
+  },
+  "86": {
+    "id": 86,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "extension",
+    "summary": "Adds adaptive depth, higher‑order interaction, and optional data normalisation to the original RZZ entanglement feature map. The new circuit supports separate repetition counts for pairwise and triplet layers, optional scaling of interactions, and a data‑mapping function for custom feature transformations. It remains fully compatible with Qiskit parameter binding and entanglement specifications.",
+    "length": 12299
+  },
+  "87": {
+    "id": 87,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "| An evolution of the polynomial ZZ feature map that introduces controlled structural changes: shared polynomial coefficients across qubits, a global pair‑weight, optional data normalization, and a symmetric entanglement enforcement. The circuit remains fully parameterisable and compatible with Qiskit’s classical data binding workflow.",
+    "length": 9224
+  },
+  "88": {
+    "id": 88,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "An enriched ZZ‑feature map that adds optional pre‑ and post‑rotations, supports higher‑order (pair and triple) ZZ interactions, and offers data normalisation. The module retains the canonical H‑P‑CX‑P‑CX structure while exposing new parameters for adaptive depth and interaction order.",
+    "length": 12463
+  },
+  "89": {
+    "id": 89,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "| A controlled‑modified variant of the polynomial ZZ feature map that introduces data re‑parameterisation, optional symmetric pair interactions, and configurable pre/post rotations while preserving the original polynomial structure and Qiskit data‑encoding compatibility.",
+    "length": 10822
+  },
+  "90": {
+    "id": 90,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "The extended feature map augments the canonical ZZ‑FeatureMap with configurable higher‑order interactions, a pre‑rotation depth, and an optional normalisation toggle. It preserves the original Hadamard‑plus‑ZZ structure while offering richer expressivity for advanced classification tasks.",
+    "length": 10758
+  },
+  "91": {
+    "id": 91,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "The ExtendedZZFeatureMap augments the canonical ZZFeatureMap by adding optional three‑body ZZ interactions, optional pre‑ and post‑RX rotations, and configurable data‑mapping functions. It retains the original Hadamard–phase–entanglement structure while offering richer expressivity for higher‑order feature interactions.",
+    "length": 8992
+  },
+  "92": {
+    "id": 92,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "The ExtendedZZFeatureMap builds upon the canonical ZZFeatureMap by adding optional pre‑ and post‑rotations, a global higher‑order interaction layer, and an adaptive depth parameter. It preserves the Hadamard‑phase–ZZ entanglement core while giving users additional knobs to increase encoding capacity.",
+    "length": 3603
+  },
+  "93": {
+    "id": 93,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the base RZZ feature map by adding a third‑order interaction (CCPhase), adaptive depth control, and optional data normalisation. The circuit still accepts a classical feature vector and exposes the same parameter prefix, but now includes a configurable triple‑scale factor and a normalisation flag.",
+    "length": 10187
+  },
+  "94": {
+    "id": 94,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_rzz.py",
+    "scaling_paradigm": "extension",
+    "summary": "The extended feature map enriches the RZZ‑based encoding with optional three‑qubit controlled‑phase interactions, a configurable interaction depth, and an optional normalisation toggle that scales input features into the [0, π] range. It preserves the original single‑qubit rotations and pairwise RZZ gates, while adding extra layers of entanglement and optional pre/post rotations to increase expressive power.",
+    "length": 12333
+  },
+  "95": {
+    "id": 95,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "extension",
+    "summary": "ZZFeatureMapPolyExtended augments the original polynomial ZZ feature map by introducing higher-order pairwise interactions, optional pre- and post-rotations, and a data scaling factor. The circuit supports flexible entanglement patterns, basis preparations, and dynamic repetition depth, enabling richer feature embeddings while remaining fully compatible with Qiskit’s parameter binding and encoding workflows.",
+    "length": 9293
+  },
+  "96": {
+    "id": 96,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the canonical ZZFeatureMap by adding optional higher‑order ZZ interactions (pairwise, three‑body, or four‑body) and an optional normalisation toggle. The new map keeps the original Hadamard‑phase‑entanglement skeleton while allowing users to increase depth, choose entanglement patterns, and enable multi‑qubit couplings in a single coherent interface.",
+    "length": 8638
+  },
+  "97": {
+    "id": 97,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map_poly.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The feature map introduces controlled modifications to the polynomial ZZ map by normalizing input features, allowing per‑qubit coefficient customization, and adding optional pre/post rotations. These changes keep the original structure while providing greater expressivity and parameter sharing flexibility.",
+    "length": 10972
+  },
+  "98": {
+    "id": 98,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "extension",
+    "summary": "| The upgraded ZZ feature map adds optional higher‑order interactions, configurable pre‑ and post‑rotations, and a simple data normalisation toggle while preserving the original CX–P–CX entanglement pattern. Users can enable three‑qubit ZZ terms, insert Y or Z rotations around the data‑dependent phases, and bind a custom mapping function for flexible preprocessing. The circuit remains fully compatible with Qiskit’s parameter binding and data‑encoding workflows.",
+    "length": 11373
+  },
+  "99": {
+    "id": 99,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This feature map symmetrises the ZZ couplings by entangling each qubit pair in both directions and introduces a shared‑parameter global rotation that couples all qubits via a common phase. Optional normalisation of the input vector is available. The interface remains compatible with Qiskit data‑encoding workflows.",
+    "length": 9610
+  },
+  "100": {
+    "id": 100,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The upgraded ZZ‑feature map introduces controlled structural modifications—mirror entanglement, shared phase and entanglement strength, optional pre‑rotations, and input normalization—while preserving the core CX–P–CX ZZ construction. This gives users finer control over encoding depth, expressivity, and parameter sharing.",
+    "length": 11589
+  },
+  "101": {
+    "id": 101,
+    "references": "seed_codebase/QML-Classification/feature_map/zz_feature_map.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "| The upgraded ZZFeatureMap introduces controlled structural changes: a symmetrised two‑qubit interaction map, a global phase offset, and flexible entanglement patterns. The design preserves the core CX‑P‑CX ZZ construction while allowing users to tune interaction symmetry and overall rotation behaviour without altering the original interface.",
+    "length": 9159
+  }
+}

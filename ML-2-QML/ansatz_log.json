@@ -1,0 +1,800 @@
+{
+  "1": {
+    "id": 1,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Introduces parameter sharing across qubits within each rotation layer, enforcing a symmetry constraint while retaining the original entanglement pattern. The layer ordering is reversed (entanglement before rotation) to alter the circuit’s operational flow, yet the module remains fully compatible with Qiskit workflows.",
+    "length": 5176
+  },
+  "2": {
+    "id": 2,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "A symmetry‑constrained variant of RealAmplitudes that mirrors rotation angles across qubits in each layer and offers an optional alternating entanglement schedule.",
+    "length": 6827
+  },
+  "3": {
+    "id": 3,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "The extended ansatz deepens expressivity by adding configurable rotation sub‑layers, hybrid rotation styles (single RY or full RY‑RZ‑RY), and optional XX‑entanglement. It preserves the seed’s core CZ entanglement while offering richer parameterization and depth control.",
+    "length": 9352
+  },
+  "4": {
+    "id": 4,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Introduces a symmetry‑aware parameter‑sharing scheme that alternates between two rotation subsets, preserving the alternating‑RX/RY pattern while enforcing a global reflection symmetry. This reduces the parameter count by half and adds a barrier‑controlled symmetry checkpoint.",
+    "length": 7810
+  },
+  "5": {
+    "id": 5,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the classic RealAmplitudes ansatz by adding optional hybrid rotation layers, configurable entanglement schedules, and adaptive depth control. The new ansatz preserves the original intuition while providing richer expressivity for more complex variational tasks.",
+    "length": 7660
+  },
+  "6": {
+    "id": 6,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Implements a controlled modification of the alternating‑rotation RealAmplitudes ansatz by introducing optional symmetry constraints across qubits within each rotation layer. Parameters can be shared globally per layer, reducing the parameter count while preserving the alternating RY/RX pattern and entanglement schedule of the seed.",
+    "length": 7927
+  },
+  "7": {
+    "id": 7,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds a parameter‑sharing control to the RealAmplitudesCZ ansatz, allowing all rotation layers to reuse the same set of parameters. This reduces the parameter count while preserving the CZ‑entangling structure, making the circuit more compact and potentially easier to train.",
+    "length": 6803
+  },
+  "8": {
+    "id": 8,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "extension",
+    "summary": "This ansatz adds a tunable hybrid depth that interleaves alternating RX/RY rotations with optional controlled‑Z entanglement, while preserving the seed’s alternating rotation pattern. It also exposes a flexible entanglement schedule and barrier placement.",
+    "length": 8672
+  },
+  "9": {
+    "id": 9,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "This ansatz extends the canonical RealAmplitudes by adding configurable entanglement patterns (star, random), entanglement gate choice (CX/CZ), rotation gate selection (RY/RX/hybrid), entanglement depth control, and optional parameter sharing. It preserves the original API while offering richer expressivity for variational circuits.",
+    "length": 11561
+  },
+  "10": {
+    "id": 10,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the original RealAmplitudes ansatz by adding configurable depth, optional mid‑layer entanglement, and a hybrid two‑qubit block (default CX).  The new design preserves the RY‑rotation core while providing fine‑grained control over circuit depth and entanglement schedules.",
+    "length": 8372
+  },
+  "11": {
+    "id": 11,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "extension",
+    "summary": "The new ansatz expands the alternating‑rotation RealAmplitudes by adding configurable mid‑entanglement blocks, optional rotation‑only layers between entanglers, and per‑repetition entanglement schedules, thereby deepening expressivity while keeping the original structure recognizable.",
+    "length": 9254
+  },
+  "12": {
+    "id": 12,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "> The new ansatz extends the classic RealAmplitudes template by allowing alternative rotation and entanglement gates, optional parameter sharing, and configurable entanglement schedules.  It preserves the original API while adding expressive knobs for deeper or more specialised circuits.",
+    "length": 10646
+  },
+  "13": {
+    "id": 13,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extended the canonical RealAmplitudes ansatz by adding an optional RZ rotation layer after each entangling CX block, increasing depth and parameter count while preserving the core RY + CX structure. The new builder exposes additional knobs for expressivity and barrier insertion, and remains fully compatible with Qiskit workflows.",
+    "length": 7579
+  },
+  "14": {
+    "id": 14,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Enforces parity symmetry by mirroring rotation parameters across qubits, sharing parameters between symmetric pairs and reducing the number of independent parameters. The entanglement pattern remains unchanged, preserving the core structure of the original ansatz.",
+    "length": 4419
+  },
+  "15": {
+    "id": 15,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "extension",
+    "summary": "Adds configurable entanglement schedules, optional parameter sharing, and an optional clean‑up rotation layer to the alternating‑rotation RealAmplitudes ansatz, increasing expressivity while preserving the original design.",
+    "length": 8123
+  },
+  "16": {
+    "id": 16,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The RealAmplitudesControlled ansatz extends the classic RealAmplitudes by adding optional parameter sharing across layers and a reversible entanglement schedule. The design preserves the RY‑CX structure while enabling symmetry constraints or a mirrored entanglement pattern.",
+    "length": 7544
+  },
+  "17": {
+    "id": 17,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the classic RealAmplitudes ansatz by adding configurable entanglement depth, gate type, and complex rotation layers (RY+RZ). The new ansatz supports deeper expressivity while preserving the original structure.",
+    "length": 9096
+  },
+  "18": {
+    "id": 18,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "The extended ansatz deepens expressivity by adding optional mid‑rotation layers, a depth multiplier, and hybrid entanglement schedules. It preserves the original CZ‑based rotation logic while exposing new knobs for richer circuit depth and entanglement patterns.",
+    "length": 7966
+  },
+  "19": {
+    "id": 19,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "extension",
+    "summary": "Adds a configurable depth‑controlled entanglement layer and a tunable “mixing” RX/RZ layer after each rotation block. The new ansatz can grow in expressivity while preserving the alternating RY/RX pattern of the seed.",
+    "length": 712
+  },
+  "20": {
+    "id": 20,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This ansatz enforces a mirror‑symmetry on the rotation parameters, optionally swaps the order of rotation and entanglement layers, and reduces the parameter count by sharing parameters across symmetric qubits. It preserves the core RY‑CX structure while providing symmetry constraints useful for physics‑informed variational circuits.",
+    "length": 6223
+  },
+  "21": {
+    "id": 21,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The ansatz keeps the RealAmplitudes structure but introduces parameter sharing across qubits within each rotation layer and an optional reversal of the entanglement pattern per layer. These controlled modifications enforce a global symmetry that reduces the parameter count while preserving the CZ‑entangling core of the original design.",
+    "length": 6400
+  },
+  "22": {
+    "id": 22,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This ansatz enforces a global Z‑parity symmetry by mirroring rotation parameters across qubit pairs, halving the number of independent weights while preserving the CZ entanglement pattern. It accepts the same configuration knobs as the original RealAmplitudesCZ and provides both a convenience function and a subclass for Qiskit integration.",
+    "length": 6209
+  },
+  "23": {
+    "id": 23,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds a mirror‑symmetry constraint to the rotation parameters, halving the number of free parameters per layer while preserving the CZ‑entangling structure and all optional features of the original RealAmplitudesCZ ansatz.",
+    "length": 7853
+  },
+  "24": {
+    "id": 24,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "extension",
+    "summary": "Adds configurable depth and entanglement schedules to the alternating rotation ansatz, enabling richer connectivity and deeper layers. Supports mid‑layer entanglement and a user‑defined depth per repetition while preserving the alternating RY/RX pattern.",
+    "length": 7464
+  },
+  "25": {
+    "id": 25,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the alternating‑rotation RealAmplitudes ansatz by adding optional mid‑rotation layers, a depth multiplier, and new entanglement schedules (ring‑to‑ring and star). The core alternating RY/RX pattern and existing entanglement options are preserved, while the added knobs increase expressivity without altering the fundamental structure.",
+    "length": 8941
+  },
+  "26": {
+    "id": 26,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This ansatz introduces symmetry constraints by sharing rotation parameters between mirror qubits, reducing the parameter count while preserving the RealAmplitudes structure. The circuit still uses RY rotations followed by CX entanglers, with optional barriers and configurable entanglement schedules.",
+    "length": 5217
+  },
+  "27": {
+    "id": 27,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "Adds an optional mix layer of RZ rotations after each CZ block, with user‑defined depth and scaling, while keeping the original CZ entanglement pattern. The overall depth can be scaled by a factor, preserving the seed's structure.",
+    "length": 9310
+  },
+  "28": {
+    "id": 28,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "Adds hybrid rotation layers, adaptive entanglement schedules, depth control, and optional parameter sharing to the base RealAmplitudes ansatz. The new ansatz retains the RY‑CX structure while allowing richer expressivity.",
+    "length": 10483
+  },
+  "29": {
+    "id": 29,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the original RealAmplitudesCZ ansatz by adding depth control, a hybrid entanglement schedule that alternates between CZ and iSWAP gates, and optional parameter sharing across rotation layers. The new ansatz remains Qiskit‑compatible and exposes both a convenience function and a subclass.",
+    "length": 7344
+  },
+  "30": {
+    "id": 30,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the alternating‑rotation RealAmplitudes ansatz with flexible rotation modes, optional RZZ entanglement, parameter sharing, and barrier support, while retaining the core alternating‑RY/RX intuition.",
+    "length": 9060
+  },
+  "31": {
+    "id": 31,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "| Extends the classic RealAmplitudes ansatz by adding configurable rotation axes, multiple entanglement gates (CX, CZ, RZZ) and support for layer‑wise entanglement schedules.  The new ansatz keeps the original structure while enabling richer expressivity and deeper control over circuit depth and entanglement patterns.",
+    "length": 7874
+  },
+  "32": {
+    "id": 32,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This ansatz imposes mirror symmetry on the rotation angles across the qubit register, halving the number of independent parameters while preserving the alternating RY/RX layers and entanglement pattern.",
+    "length": 7033
+  },
+  "33": {
+    "id": 33,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds a mirror‑symmetry parameter‑sharing scheme to the alternating‑rotation RealAmplitudes ansatz, reducing the number of free parameters while preserving the alternating RY/RX pattern and entanglement structure.",
+    "length": 7027
+  },
+  "34": {
+    "id": 34,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The ansatz enforces a qubit‑symmetry constraint by sharing a single rotation angle across all qubits in each alternating RY/RX layer.  It preserves the seed’s alternating structure and entanglement schedule while reducing the parameter count.  A `share_params` flag allows users to toggle this symmetry or fall back to the original parameterization.",
+    "length": 8280
+  },
+  "35": {
+    "id": 35,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "This extension enriches the seed ansatz with a second RZ rotation layer per repetition, a parity‑based entanglement mode, and optional mid‑layer barriers, thereby deepening expressivity while preserving the original structure.",
+    "length": 7889
+  },
+  "36": {
+    "id": 36,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "Expands the original RealAmplitudesCZ ansatz with a tunable depth‑controlled hybrid entanglement that alternates between CZ and controlled‑RZ gates, and adds optional global‑phase blocks for richer expressibility. The new ansatz preserves the single‑qubit rotation and entanglement schedule while allowing deeper circuits and symmetry‑aware parameter sharing.",
+    "length": 7959
+  },
+  "37": {
+    "id": 37,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds global parameter sharing across qubits within each rotation layer, reducing the parameter count while preserving the RealAmplitudes structure and entanglement schedule.",
+    "length": 7050
+  },
+  "38": {
+    "id": 38,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "Adds an optional hybrid U3 rotation layer, a second full‑connectivity CZ entanglement per repetition, and a parity‑controlled entanglement pattern to the original RealAmplitudesCZ ansatz, thereby deepening expressivity while preserving the core CZ‑entangling structure.",
+    "length": 7856
+  },
+  "39": {
+    "id": 39,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds a symmetry flag that, when enabled, forces all rotation layers to share a single set of parameters, creating a globally symmetric ansatz. The core RealAmplitudes‑CZ structure is retained, but the optional symmetry constraint changes the circuit’s expressivity while preserving parameter binding semantics.",
+    "length": 7392
+  },
+  "40": {
+    "id": 40,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "extension",
+    "summary": "The new ansatz deepens the original alternating‑rotation structure by adding optional diagonal (RZ) layers, a parameter‑shared mode for these diagonals, and a per‑layer entanglement schedule with controllable depth.  It keeps the alternating RY/RX pattern while enriching expressivity and providing fine‑grained control over entanglement and diagonal rotations.",
+    "length": 9759
+  },
+  "41": {
+    "id": 41,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds a global parity symmetry constraint to the CZ‑based RealAmplitudes ansatz. When the optional flag ``enforce_symmetry`` is True, all rotation layers use Rz instead of Ry, guaranteeing invariance under the global Z₂ operator while preserving the original circuit structure.",
+    "length": 7776
+  },
+  "42": {
+    "id": 42,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The ansatz now optionally shares a single set of rotation parameters across all layers, reducing the parameter count while preserving the alternating RY/RX pattern. This imposes a global parameter symmetry across layers.",
+    "length": 6882
+  },
+  "43": {
+    "id": 43,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This controlled‑modification ansatz extends the classic RealAmplitudes by adding optional symmetry constraints on rotation layers and optional parameter sharing across layers, reducing parameter count while preserving the original structure.",
+    "length": 7067
+  },
+  "44": {
+    "id": 44,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Added a symmetry‑preserving parameter‑sharing scheme across the rotation layers that guarantees the circuit is invariant under qubit permutation. The new ansatz still uses CZ entanglers but now enforces a shared parameter set for each qubit per layer, reducing the total number of parameters while keeping the expressive power for symmetric data.",
+    "length": 6543
+  },
+  "45": {
+    "id": 45,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The ansatz enforces a global Z‑symmetry by replacing CX gates with CZ entanglement while keeping the alternating RY/RX rotation schedule.  It preserves the seed’s interface and parameterization, making it drop‑in compatible for problems with parity conservation.",
+    "length": 5161
+  },
+  "46": {
+    "id": 46,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The ansatz enforces a symmetry that each entangled qubit pair shares a single rotation parameter, reducing the number of free parameters while preserving the alternating‑rotation structure. It requires a perfect matching entanglement schedule and is suitable for even‑qubit systems where pairwise symmetry is desired.",
+    "length": 7955
+  },
+  "47": {
+    "id": 47,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "The new ansatz enriches the classic RealAmplitudes by allowing arbitrary single‑qubit rotations, multiple entanglement gates, optional parameter sharing, per‑layer entanglement schedules, and barrier insertion, all while maintaining the same public interface.",
+    "length": 10285
+  },
+  "48": {
+    "id": 48,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Introduces parameter sharing across rotation layers, reducing the parameter count while preserving the CZ-entangling structure. The ansatz remains compatible with Qiskit and supports optional barriers, entanglement patterns, and a final rotation layer toggle.",
+    "length": 6187
+  },
+  "49": {
+    "id": 49,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds optional parameter sharing across rotation layers, reducing the number of variational parameters while preserving the alternating RY/RX pattern. The ansatz remains fully compatible with Qiskit and can be used as a drop‑in replacement for the original RealAmplitudesAlternating.",
+    "length": 7928
+  },
+  "50": {
+    "id": 50,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds reflection‑symmetry to the classic RealAmplitudes ansatz by sharing rotation parameters across mirror qubits and providing a dedicated “mirror” entanglement schedule. The construction remains a valid QuantumCircuit and can be used interchangeably with the original while enforcing a physically motivated symmetry.",
+    "length": 7543
+  },
+  "51": {
+    "id": 51,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The new ansatz enforces a symmetry that exchanges qubits 0 and 1 by tying the parameters of the rotation layers together.  It also adds an optional “enforce_symmetry” flag that, when enabled, automatically ties the rotation parameters for qubits 0 and 1 to preserve the exchange symmetry throughout the circuit.",
+    "length": 5920
+  },
+  "52": {
+    "id": 52,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the canonical RealAmplitudes by adding a depth‑factor, optional shared parameters, and a second RZ rotation layer after each RY layer, yielding a richer entanglement pattern while maintaining the original RY‑CX structure.",
+    "length": 8440
+  },
+  "53": {
+    "id": 53,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The ansatz enforces a global qubit‑permutation symmetry by tying each mirror pair of qubits to a single rotation parameter, reducing the parameter count while preserving the alternating RY/RX pattern and entanglement schedule.",
+    "length": 7227
+  },
+  "54": {
+    "id": 54,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the original CZ‑based RealAmplitudes ansatz by adding a depth‑controlled entanglement schedule, optional controlled‑RZ gates, and a flexible entanglement pattern. The new ansatz can grow in expressivity while remaining fully compatible with Qiskit workflows.",
+    "length": 8692
+  },
+  "55": {
+    "id": 55,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Extends the classic RealAmplitudes ansatz by optionally enforcing symmetry across qubits within each rotation layer, reducing the number of independent parameters while preserving the core RY‑CX structure.",
+    "length": 8306
+  },
+  "56": {
+    "id": 56,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The new ansatz preserves the Real‑Amplitudes structure but adds two optional controls: shared rotation parameters across layers and enforced qubit‑pair symmetry. This reduces parameter count while maintaining expressivity, and can be toggled via flags.",
+    "length": 6641
+  },
+  "57": {
+    "id": 57,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "Expands the canonical RealAmplitudes ansatz by adding optional SX and RZ layers, a configurable depth‑controlled adaptive layer, and a flexible entanglement schedule. The new circuit supports hybrid rotation blocks and optional Trotter‑style entangling sequences.",
+    "length": 10335
+  },
+  "58": {
+    "id": 58,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The new ansatz enforces a parity‑symmetric parameter layout: each rotation angle on qubit *i* is mirrored on qubit *n‑1‑i* and the entanglement graph is mirrored as well.  This preserves the original CZ‑based structure while adding a symmetry constraint that can reduce parameter count and bias the circuit toward symmetric states.",
+    "length": 5905
+  },
+  "59": {
+    "id": 59,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the base RealAmplitudesCZ by adding a depth parameter, optional star‑shaped CZ entanglement, and configurable parameter sharing. The new ansatz preserves the single‑qubit Ry rotations and CZ gates while offering richer entanglement patterns and deeper circuit depth without necessarily increasing the number of parameters.",
+    "length": 6972
+  },
+  "60": {
+    "id": 60,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds controlled‑parameter sharing across rotation layers, reducing the parameter count while preserving the original rotation‑and‑CZ structure. The ansatz can optionally enforce mirror symmetry by tying parameters of qubits i and n‑1‑i.",
+    "length": 5849
+  },
+  "61": {
+    "id": 61,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The ansatz enforces mirror‑symmetry across the qubit register, halving the number of rotation parameters per layer while preserving the original depth, entanglement pattern, and optional barriers. This controlled modification keeps the circuit recognizable as RealAmplitudes but introduces a structural constraint useful for symmetry‑aware variational algorithms.",
+    "length": 5314
+  },
+  "62": {
+    "id": 62,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "The new ansatz extends RealAmplitudesCZ by adding a depth multiplier, optional RZ rotations, and an optional final mixing layer, increasing expressivity while preserving the original structure.",
+    "length": 9637
+  },
+  "63": {
+    "id": 63,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "extension",
+    "summary": "Adds a tunable depth‑controlled entanglement schedule and a configurable phase‑shift layer after each rotation block, turning the simple alternating‑RX/RY ansatz into a richer, hybrid circuit that can capture more complex correlations while keeping the core alternating pattern.",
+    "length": 8074
+  },
+  "64": {
+    "id": 64,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This ansatz enforces parameter sharing across all rotation layers, reducing the total number of parameters while preserving the RealAmplitudes structure. The rotation parameters are identical for every layer, introducing a reflection‑like symmetry that can improve training stability and reduce circuit depth.",
+    "length": 6700
+  },
+  "65": {
+    "id": 65,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "> Extends the classic RealAmplitudes ansatz by adding optional RZZ entanglement and RZ mixing layers.  The new design keeps the original RY + CX structure but allows deeper expressivity while preserving all configuration knobs (entanglement type, barriers, parameter prefix, etc.).",
+    "length": 10955
+  },
+  "66": {
+    "id": 66,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the original alternating‑rotation ansatz by adding optional mid‑layer entanglement blocks, a configurable adaptive layer, and a `max_depth` knob that caps the total number of rotation layers.  The new design keeps the alternating RY/RX pattern but inserts user‑specified “entangler” blocks after each rotation and optionally appends a final adaptive block that can be turned on or off.",
+    "length": 10502
+  },
+  "67": {
+    "id": 67,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the original RealAmplitudesCZ ansatz by adding a configurable depth‑controlled hybrid layer, optional SWAP networks for enhanced connectivity, and a flexible entanglement schedule. The new ansatz supports a maximum depth parameter and optional barriers for easier debugging.",
+    "length": 7690
+  },
+  "68": {
+    "id": 68,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "| Extends the canonical RealAmplitudes ansatz by adding optional parameterized RZ “mixing” layers after each entanglement stage, deepening the circuit’s expressivity while preserving the original rotation‑entangler structure.  Users can toggle the extra layers, control entanglement topology, and keep barrier and rotation‑layer settings identical to the seed.",
+    "length": 6686
+  },
+  "69": {
+    "id": 69,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "extension",
+    "summary": "Adds a second rotation block per repetition and an optional controlled‑phase entanglement stage, deepening the alternating‑rotation ansatz while preserving its intuitive structure.  The new circuit offers richer single‑qubit dynamics and long‑range phase correlations, controlled via depth, entanglement schedule, and phase‑gate flags.",
+    "length": 9244
+  },
+  "70": {
+    "id": 70,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds a global Z‑phase symmetry to the RealAmplitudesCZ ansatz by inserting a Phase(π) gate on every qubit after each entangling layer. This preserves the seed’s rotation and entanglement structure while enforcing a trivial global phase symmetry useful for problems invariant under simultaneous Z rotations.",
+    "length": 5277
+  },
+  "71": {
+    "id": 71,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "The new ansatz deepens the original RealAmplitudes by adding an optional mid‑layer rotation between each RY rotation and CX entangler, a configurable entanglement schedule, and a depth‑control knob. It preserves the original RY‑CX pattern while allowing richer expressivity per repetition.",
+    "length": 7828
+  },
+  "72": {
+    "id": 72,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds optional reflection symmetry to the alternating‑rotation ansatz by sharing rotation parameters across mirror‑symmetric qubits.  The core alternating‑rotation and entanglement structure is preserved, but the circuit can be constrained to exhibit a mirror invariance useful for symmetric data sets.",
+    "length": 6387
+  },
+  "73": {
+    "id": 73,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "SymmetricRealAmplitudes enforces parameter sharing across qubits within each rotation layer, and optionally across layers, while preserving the RealAmplitudes structure. This controlled modification reduces the number of independent parameters and introduces symmetry constraints that can aid training stability.",
+    "length": 6187
+  },
+  "74": {
+    "id": 74,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds optional symmetry constraints and layer ordering to the alternating RealAmplitudes ansatz. Parameters can be shared across all qubits within a layer, and entanglement can be applied in reverse order for each repetition, while preserving the seed’s alternating rotation structure.",
+    "length": 7133
+  },
+  "75": {
+    "id": 75,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "This ansatz enriches the classic RealAmplitudes by adding flexible entanglement schedules, optional hybrid rotation layers, and a parameter‑sharing knob. It can also use a wider set of entanglement patterns (full, linear, circular, star, random). The design keeps the original API while exposing new configuration options for deeper expressivity.",
+    "length": 9229
+  },
+  "76": {
+    "id": 76,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This ansatz introduces symmetry‑constrained parameter sharing across alternating rotation layers, preserving the alternating‑rotation pattern. It allows users to specify whether all layers share parameters, even/odd layers share parameters, or each layer has independent parameters. The result is a more compact circuit with a tunable symmetry factor.",
+    "length": 8666
+  },
+  "77": {
+    "id": 77,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The new ansatz retains the core RY‑plus‑CX structure of RealAmplitudes but enforces rotational symmetry across qubits and optional parameter sharing across layers.  It also allows reversing the entanglement order per layer.  These controlled changes keep the ansatz recognisable while tightening its expressive power and providing useful symmetry constraints for physics‑motivated problems.",
+    "length": 7267
+  },
+  "78": {
+    "id": 78,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds a parity‑symmetry constraint to the RealAmplitudes ansatz by mirroring rotation angles across qubits, halving the number of trainable parameters. The symmetry can be toggled, preserving the original RY + CX structure. The resulting circuit remains fully parameter‑bound and composable with other Qiskit circuits.",
+    "length": 7603
+  },
+  "79": {
+    "id": 79,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the canonical RealAmplitudes ansatz by adding optional RZ rotations, parameter sharing across layers, custom entanglement schedules, optional SWAP gates, and barrier insertion. The new ansatz preserves the original RY‑CX structure while offering greater expressivity and flexibility for variational algorithms.",
+    "length": 11880
+  },
+  "80": {
+    "id": 80,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The new ansatz preserves the core Real‑Amplitudes structure but introduces a *controlled‑rotation* symmetry: each RY rotation is replaced by a CRY gate controlled by the preceding qubit. This enforces a parity‑conserving entanglement pattern while keeping the same parameter count and interface.",
+    "length": 8026
+  },
+  "81": {
+    "id": 81,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Introduces optional parameter sharing across rotation layers, reducing parameter count and imposing a symmetry constraint while preserving the original RealAmplitudes structure.",
+    "length": 6641
+  },
+  "82": {
+    "id": 82,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "The extended ansatz deepens expressivity by adding a configurable second entangling block that can use either CZ or CNOT gates, while preserving the original rotation and entanglement structure. It also exposes a convenient constructor function and a QuantumCircuit subclass for direct use.",
+    "length": 6266
+  },
+  "83": {
+    "id": 83,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "The new RealAmplitudes ansatz extends the original by allowing multiple entanglement depths, optional RZZ entanglers, and rotation type alternation (RY, RZ, or alternating). It also introduces several entanglement patterns (full, linear, circular, star, random, none) and a deterministic schedule for random entanglement. The interface remains backward compatible while adding richer expressivity for quantum machine learning tasks.",
+    "length": 9581
+  },
+  "84": {
+    "id": 84,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "extension",
+    "summary": "The ansatz deepens the seed by inserting a controlled‑RZ block between each rotation layer, allowing the entanglement schedule to be tuned via a callable or predefined string. It also exposes a global‑phase parameter and optional barriers, while preserving the alternating RY/RX rotation pattern.",
+    "length": 7528
+  },
+  "85": {
+    "id": 85,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "Adds configurable entanglement depth and optional entanglement gate type to the original RealAmplitudesCZ ansatz, preserving rotation layers while deepening expressivity.",
+    "length": 8322
+  },
+  "86": {
+    "id": 86,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "Adds a configurable depth‑controlled hybrid layer that alternates between CZ‑entangled real rotations and optional global‑phase blocks. The new ansatz can be tuned with a `depth` parameter that scales the number of rotation–entanglement pairs, and a `use_global_phase` flag that inserts a controlled‑phase block after each CZ pair. It preserves the original entanglement logic while enriching expressivity.",
+    "length": 8131
+  },
+  "87": {
+    "id": 87,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the original alternating‑rotation ansatz by adding optional mid‑layer rotations and a tunable entanglement depth. The new design supports deeper expressivity while preserving the alternating RY/RX pattern and entanglement flexibility.",
+    "length": 6180
+  },
+  "88": {
+    "id": 88,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "The new ansatz extends RealAmplitudesCZ by adding a configurable hybrid layer consisting of RX–RY rotations after each CZ entanglement, and supports a dynamic hybrid depth and optional final rotation layer. This deepens expressivity while preserving the original interface.",
+    "length": 8584
+  },
+  "89": {
+    "id": 89,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds optional symmetry and parameter‑sharing knobs to the alternating RealAmplitudes ansatz, enforcing reflection symmetry or shared rotation angles per layer while preserving the original rotation/entanglement structure.",
+    "length": 8440
+  },
+  "90": {
+    "id": 90,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Introduces mirror‑symmetry constraints on both rotation parameters and optional entanglement links, turning the alternating Real Amplitudes ansatz into a symmetry‑aware circuit while keeping the original structure intact.",
+    "length": 9774
+  },
+  "91": {
+    "id": 91,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "MirrorRealAmplitudes imposes a reflection symmetry across the qubit register, reusing rotation parameters for qubits i and n‑1‑i. The circuit retains the RealAmplitudes structure while reducing the parameter count and enforcing invariance under qubit reversal. Entanglement patterns and layer ordering remain fully configurable.",
+    "length": 7378
+  },
+  "92": {
+    "id": 92,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the original RealAmplitudesCZ by adding optional multi‑qubit entanglers (CZ chains and block entanglement) and a configurable adaptive depth layer, while preserving the single‑qubit rotation structure.",
+    "length": 9030
+  },
+  "93": {
+    "id": 93,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This ansatz enforces a symmetry constraint by sharing a single RY rotation angle across all qubits in each layer. It reduces the parameter count while preserving the RealAmplitudes structure, making the circuit more compact and easier to train under symmetry‑relevant problems.",
+    "length": 5828
+  },
+  "94": {
+    "id": 94,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "This ansatz introduces reflection symmetry and optional parameter sharing across layers into the RealAmplitudes template, reducing the parameter count while preserving the core RY‑CX structure. It also offers a layer‑reordering option to place entanglement before rotations.",
+    "length": 8437
+  },
+  "95": {
+    "id": 95,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Introduces reflection symmetry across qubits, halving the number of independent rotation parameters while preserving the RealAmplitudes structure. The ansatz remains fully compatible with Qiskit workflows.",
+    "length": 5822
+  },
+  "96": {
+    "id": 96,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds a global‑Z symmetry constraint by sharing the rotation angle across all qubits in each layer, reducing parameters while preserving the CZ entanglement pattern.",
+    "length": 6873
+  },
+  "97": {
+    "id": 97,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "The extended ansatz deepens the original RealAmplitudes‑CZ circuit by adding a configurable number of hybrid rotation‑entanglement layers. Each extra layer applies a full‑connect CZ block followed by a rotation on all qubits, giving users a depth knob that increases expressivity without altering the core interface. The new class and function remain fully Qiskit‑compatible and expose the same parameter set as the seed, with an additional `depth` argument.",
+    "length": 8239
+  },
+  "98": {
+    "id": 98,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds symmetry‑aware parameter sharing and optional layer reordering to the alternating‑rotation ansatz. This controlled variant reduces the number of free parameters by reusing a single rotation set across depth and optionally swaps rotation/entanglement order for different expressive characteristics.",
+    "length": 7534
+  },
+  "99": {
+    "id": 99,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the original RealAmplitudesCZ ansatz by adding optional multi‑qubit entanglers (XX, YY, ZZ) and an adaptive depth‑controlled entanglement layer. The new ansatz keeps the single‑qubit rotation logic but allows richer entanglement patterns and configurable barrier handling.",
+    "length": 8345
+  },
+  "100": {
+    "id": 100,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the alternating‑rotation RealAmplitudes ansatz by adding a second entangling layer per depth, optional second entanglement specification, and barrier insertion, while preserving the core alternating rotation pattern.",
+    "length": 8046
+  },
+  "101": {
+    "id": 101,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "extension",
+    "summary": "The extended ansatz deepens expressivity by adding optional mid‑layer entanglement blocks, a tunable depth‑control circuit, and a hybrid rotation scheme that interleaves RX/RY with RZ. It also introduces a configurable “entanglement schedule” that can be a list, callable or string, and keeps the original alternating‑rotation intuition.",
+    "length": 9476
+  },
+  "102": {
+    "id": 102,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "Adds optional mid‑entanglement layers and swap‑based entanglement to the original RealAmplitudesCZ ansatz, enabling deeper and more expressive circuits while preserving the rotation‑plus‑entanglement structure.",
+    "length": 6635
+  },
+  "103": {
+    "id": 103,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds symmetry constraints and optional parameter sharing to the canonical RealAmplitudes ansatz, reducing parameter count while preserving the rotation‑entanglement structure.",
+    "length": 6172
+  },
+  "104": {
+    "id": 104,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "The ExtendedRealAmplitudes ansatz augments the classic RealAmplitudes circuit with optional RZ rotation layers and RZZ entangling gates, thereby increasing expressivity while preserving the core RY + CX structure. It offers flexible entanglement schedules, barrier insertion, and distinct parameter prefixes for each gate type.",
+    "length": 7025
+  },
+  "105": {
+    "id": 105,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "Enhances the CZ‑based RealAmplitudes ansatz by inserting a configurable hybrid entanglement layer that alternates between CZ and iSWAP gates.  A new `hybrid_depth` knob controls how many hybrid cycles are added between each standard rotation block, while `deep_copy_entanglement` protects user‑supplied schedules from accidental mutation.",
+    "length": 7314
+  },
+  "106": {
+    "id": 106,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "Builds on the canonical RealAmplitudes ansatz by adding optional U3 and RX rotations, a depth‑controlled entanglement schedule, and barrier placement.  The new ansatz exposes fine‑grained knobs for gate mix, schedule, and parameter naming, while remaining fully compatible with Qiskit's circuit composition and parameter binding.",
+    "length": 8937
+  },
+  "107": {
+    "id": 107,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "The ansatz enforces a global rotation symmetry by sharing a single rotation parameter per layer across all qubits, reducing the parameter count while preserving the Core RealAmplitudes structure. Optional entanglement, barriers, and final rotation layer controls remain available.",
+    "length": 6906
+  },
+  "108": {
+    "id": 108,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds a symmetry‑controlled parameter sharing option to the alternating‑rotation RealAmplitudes ansatz, reducing the number of free parameters while preserving the alternating RY/RX pattern and entanglement structure.",
+    "length": 7299
+  },
+  "109": {
+    "id": 109,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": ">- The ansatz expands the classic RealAmplitudes by adding an optional RZ‑only rotation block that follows each RY block, and by allowing a custom entangler schedule per repetition.  The original RY‑plus‑CX structure is preserved, but each repetition now contains an additional rotation layer that can be turned on or off, giving the user a richer, depth‑controlled variational space while keeping the public API identical.",
+    "length": 8143
+  },
+  "110": {
+    "id": 110,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "extension",
+    "summary": "Extends the alternating‑rotation RealAmplitudes ansatz by adding a depth‑controlled hybrid entanglement block, optional parametric two‑qubit gates, and per‑repetition barrier insertion.  The new ansatz preserves the alternating RY/RX pattern while exposing fine‑grained control over entanglement schedules and depth scaling, making it suitable for deeper variational circuits.",
+    "length": 9388
+  },
+  "111": {
+    "id": 111,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_alternating.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Adds optional parameter sharing across layers and optional reflection symmetry on rotation parameters to the alternating‑rotation RealAmplitudes ansatz, reducing the parameter count while preserving its core structure.",
+    "length": 7841
+  },
+  "112": {
+    "id": 112,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "extension",
+    "summary": "The Extended RealAmplitudesCZ ansatz deepens expressivity by adding optional multi‑controlled rotations and a tunable entanglement depth parameter. It also supports alternating layers of CZ and iSWAP to enrich the interaction graph while preserving the original single‑qubit Ry rotation intuition.",
+    "length": 10300
+  },
+  "113": {
+    "id": 113,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes.py",
+    "scaling_paradigm": "extension",
+    "summary": "The ExtendedRealAmplitudes ansatz expands the classic RealAmplitudes circuit by adding optional RZ rotations, flexible entangler choices (CX, CZ, CRX, CRZ), entanglement depth, parameter sharing across qubits, and barrier insertion. It retains the original interface while providing richer expressivity for variational algorithms.",
+    "length": 9877
+  },
+  "114": {
+    "id": 114,
+    "references": "seed_codebase/QML-Classification/ansatz/real_amplitudes_cz.py",
+    "scaling_paradigm": "controlled modification",
+    "summary": "Introduces a symmetry‑preserving parameter‑sharing scheme that mirrors the rotation angles across all qubits. The circuit retains the original CZ entanglers and layer ordering but enforces that each qubit in a given layer shares the same rotation. This reduces parameter count while keeping the expressive structure intact.",
+    "length": 5465
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "dataset": {
+    "feature_names": [
+      "alcohol",
+      "malic_acid",
+      "ash",
+      "alcalinity_of_ash",
+      "magnesium",
+      "total_phenols",
+      "flavanoids",
+      "nonflavanoid_phenols",
+      "proanthocyanins",
+      "color_intensity",
+      "hue",
+      "od280/od315_of_diluted_wines",
+      "proline"
+    ],
+    "target_name": "['class_0', 'class_1', 'class_2']",
+    "dataset_name": "Wine-3class",
+    "description": "",
+    "n_samples": 178,
+    "n_features": 13,
+    "n_classes": 40,
+    "class_names": [
+      "W",
+      "i",
+      "n",
+      "e",
+      " ",
+      "q",
+      "u",
+      "a",
+      "l",
+      "i",
+      "t",
+      "y",
+      " ",
+      "c",
+      "l",
+      "a",
+      "s",
+      "s",
+      "i",
+      "f",
+      "i",
+      "c",
+      "a",
+      "t",
+      "i",
+      "o",
+      "n",
+      " ",
+      "(",
+      "3",
+      " ",
+      "c",
+      "l",
+      "a",
+      "s",
+      "s",
+      "e",
+      "s",
+      ")",
+      "."
+    ]
+  },
+  "settings": {
+    "optimizer": "COBYLA",
+    "num_reps": 2,
+    "kfold": 3,
+    "strict_fold_preprocess": false,
+    "use_pca": true,
+    "pca_n_components": 4.0,
+    "pca_whiten": false,
+    "n_features_final": 4,
+    "explained_variance_ratio_cum": 0.7359899907589931,
+    "limit_samples": null,
+    "feature_map": "DEFAULT",
+    "ansatz": "DEFAULT"
+  },
+  "metrics": {
+    "accuracy_mean": 0.3483050847457627,
+    "accuracy_std": 0.007022487511105117,
+    "f1_macro_mean": 0.3412009443868635,
+    "f1_macro_std": 0.022185387072141353,
+    "f1_weighted_mean": 0.3406933195597783,
+    "f1_weighted_std": 0.010932360990620517,
+    "per_class_accuracy": {
+      "W": 0.3559322033898305,
+      "i": 0.3380281690140845,
+      "n": 0.3541666666666667
+    },
+    "confusion_matrix": [
+      [
+        21,
+        21,
+        17
+      ],
+      [
+        31,
+        24,
+        16
+      ],
+      [
+        13,
+        18,
+        17
+      ]
+    ],
+    "class_labels": [
+      0,
+      1,
+      2
+    ],
+    "class_names": [
+      "W",
+      "i",
+      "n"
+    ]
+  }
+}
